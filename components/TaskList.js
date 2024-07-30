@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/Home.module.css';
 
 const TaskItem = ({ task, onToggleComplete, onEdit }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -8,7 +9,7 @@ const TaskItem = ({ task, onToggleComplete, onEdit }) => {
   };
 
   return (
-    <div>
+    <div className={styles.taskItem}>
       <h3 onClick={handleExpand}>
         {task.title} {task.completed ? '✓' : ''}
       </h3>
@@ -16,10 +17,10 @@ const TaskItem = ({ task, onToggleComplete, onEdit }) => {
         <div>
           <p>{task.description}</p>
           <p>Last Updated: {new Date(task.lastUpdated).toLocaleString()}</p>
-          <button onClick={() => onToggleComplete(task.id)}>
+          <button onClick={() => onToggleComplete(task.id)} className={styles.button}>
             {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
           </button>
-          <button onClick={() => onEdit(task)}>Edit</button>
+          <button onClick={() => onEdit(task)} className={styles.button}>Edit</button>
         </div>
       )}
     </div>

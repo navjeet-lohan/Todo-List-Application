@@ -6,6 +6,7 @@ import TaskList from '../components/TaskList';
 import SearchTasks from '../components/SearchTasks';
 import EditTask from '../components/EditTask';
 import { useRouter } from 'next/router';
+import styles from '../styles/Home.module.css';
 
 export const getServerSideProps = async () => {
   const filePath = path.join(process.cwd(), 'public', 'tasks.json');
@@ -69,8 +70,10 @@ const Home = ({ tasks }) => {
   );
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className={styles.container}>
+      <header>
+        <h1>Todo List</h1>
+      </header>
       <SearchTasks onSearch={handleSearch} />
       <AddTask onAdd={addTask} />
       <TaskList tasks={filteredTasks} onToggleComplete={toggleComplete} onEdit={editTask} />

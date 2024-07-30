@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/Home.module.css';
 
 const SearchTasks = ({ onSearch }) => {
   const [query, setQuery] = useState('');
@@ -14,6 +15,7 @@ const SearchTasks = ({ onSearch }) => {
       placeholder="Search Tasks"
       value={query}
       onChange={handleSearch}
+      className={styles.searchBar}
     />
   );
 };

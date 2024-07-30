@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/Home.module.css';
 
 const EditTask = ({ task, onSave }) => {
   const [title, setTitle] = useState(task.title);
@@ -14,12 +15,14 @@ const EditTask = ({ task, onSave }) => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className={styles.input}
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        className={styles.textarea}
       />
-      <button onClick={handleSave}>Save</button>
+      <button onClick={handleSave} className={styles.button}>Save</button>
     </div>
   );
 };
