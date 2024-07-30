@@ -27,8 +27,4 @@ The search functionality is managed using URL parameters.
 3. Start the development server: `npm run dev`
 4. Open `http://localhost:3000` in your browser.
 
-## Future Enhancements
-- Add user authentication.
-- Implement a backend API for persistent data storage.
-- Add more advanced search and filter options.
 
